@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'BoingSemiBold', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+ 
+}
+
+
+/* header */
+
+.header{
+    height: 50px;
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_logo{
+    text-decoration: none;
+    margin: 20px;
+}
+
+.header_logo a{
+    color: #2272eb;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header_menu{
+    margin-left: 100px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+.header_menu a:hover, .header_account a:hover{
+    background-color: rgba(0,27,55,0.1);
+    border-radius: 4px;
+}
+
+.header_menu a, .header_account a{
+    font-size: 15px;
+    padding: 12px 10px;
+    margin:0 13px;
+    text-decoration: none;
+    color: black;
+}
+
+.header_account{
+    list-style: none;
+    display: flex;
+    padding: 20px;
+}
+
+
+
+/* intro */
+
+.intro1{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://improvehealthbetter.com/wp-content/uploads/2021/09/f5c7821d896b0ace7f7b08618c373b9f.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+}
+
+.container1{
+    width: 700px;
+    height: 300px;
+    border: 1px solid rgba(0,27,55,0.1);
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.3);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 80px;
+    font-size: 25px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#catch_prhase{
+    font-weight: 700;
+    text-align: center;
+    line-height: 90px;
+    font-size: 55px;
+    margin-top: 8%;
+}
+
+.intro2{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teachable_phrase h1{
+    font-size: 60px;
+    color: #2272eb;
+}
+
+.teachable_phrase h2{
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.teachable_phrase a{
+    padding: 10px 30px;
+    margin: 20px 10px;
+    background-color: #2272eb;
+    border-radius: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;    
+}
+
+#teachable_image{
+    width: 700px;
+}
+
+.intro3, .intro4{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.intro3 h2,.intro4 h2{
+    text-align: center;
+    
+    font-size: 150px;
+}
+
