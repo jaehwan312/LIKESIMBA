@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0216d67b62.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://emojigraph.org/media/emojidex/bento-box_1f371.png">
+    <title>오늘의 편식</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var elm = ".mainfullbox";
+			var boxcount= $(elm).length;
+			var wheelflag = false; //휠 동작중인지 아닌지 체크
+			var wheelindex = 0; //첫번째 전체화면 엘리먼트 인덱스값
+			
+            $(elm).each(function (index) {
+                // 개별적으로 Wheel 이벤트 적용
+                $(this).on("mousewheel DOMMouseScroll", function (e) {
+                    e.preventDefault();
+					console.log($(this).index());  
+					//alert($(this).index());
+					//엘리먼트 인덱스값 확인하여 wheelindex 변수에 대입
+                    var delta = 0;
+                    if (!event) event = window.event;
+                    if (event.wheelDelta) {
+                        delta = event.wheelDelta / 120;
+                        if (window.opera) delta = -delta;
+                    } 
+                    else if (event.detail)
+                        delta = -event.detail / 3;
+                    var moveTop = $(window).scrollTop();
+
+                    var elmSelecter = $(elm).eq(index);
+                    // 마우스휠을 위에서 아래로
+                    if (delta < 0) {
+                        if ($(elmSelecter).next() != undefined) {
+                            try{
+
+								if($(this).index() == (boxcount-1)) {
+								moveTop = $(elmSelecter).offset().top;
+								
+								} else {
+								moveTop = $(elmSelecter).next().offset().top;
+								$('#mainfull_navi p').removeClass('on');
+								$('#mainfull_navi'+$(elmSelecter).next().index()).addClass('on');
+								}
+
+                            }catch(e){}
+                        }
+                    // 마우스휠을 아래에서 위로
+                    } else {
+                        if ($(elmSelecter).prev() != undefined) {
+                            try{
+
+								if($(this).index() == wheelindex) { //index값 조정 필요. 기본 0이어야 되는데 ㅜㅜ
+								moveTop = $(elmSelecter).offset().top;
+								} else {
+                                moveTop = $(elmSelecter).prev().offset().top;
+								$('#mainfull_navi p').removeClass('on');
+								$('#mainfull_navi'+$(elmSelecter).prev().index()).addClass('on');
+								}
+                            }catch(e){
+
+							}
+                        }
+                    }
+                     
+                    // 화면 이동 0.8초(800)
+                    //if (wheelflag == false) {
+						//wheelflag = true;
+						$("html,body").stop().animate({
+						scrollTop: moveTop + 'px'
+						}, {
+							duration: 800, complete: function () {
+							wheelflag = false;
+						}
+						});
+					//}
+                });
+            });
+        }
+
+		//네비게이션용 함수
+		function fnMove(div, num){
+			var offset = $(div).offset();
+			$('html, body').animate({scrollTop : offset.top}, 400);
+			$('#mainfull_navi p').removeClass('on');
+			$('#mainfull_navi'+num).addClass('on');
+		}
+
+    </script>
+</head>
+
+<body>
+
+    <!-- section1 -->
+    <div class="mainfullbox" id="mainfulldiv0" style="background-color:#EC524B;">
+        <!-- header -->
+        <header>
+            <a href="javascript:fnMove('#mainfulldiv0', 0)"><img src="logo3.png" alt=""></a>        
+            <ul class="account">
+                <li><a href="login.html">로그인</a></li>
+                <span>|</span>
+                <li><a href="create.html">회원가입</a></li>
+            </ul>
+        </header>
+
+        <!-- section1 -->
+        <div class="container1">
+            <h1 id="catch_phrase">AI를 이용하여 편의점 식품들의 <br>영양정보를 보다 쉽고 간편하게!</h1>
+        </div>
+
+
+        <!-- scroll animation -->
+        <div class="scroll-link">    
+            <svg class="mouse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 130" preserveAspectRatio="xMidYMid meet">
+            <g fill="none" fill-rule="evenodd">
+                <rect width="70" height="118" x="1.5" y="1.5" stroke="#FFF" stroke-width="3" rx="36"/>
+                <circle class="scroll" cx="36.5" cy="31.5" r="4.5" fill="#FFF"/>
+            </g>
+            </svg>
+        </div>
+        
+    </div>
+    <!-- section2 -->
+    <div class="mainfullbox" id="mainfulldiv1" style="background-color:#5F6CAF;">
+        <div class="teachable_phrase">
+            <h2>카메라에<br> 비추기만 해도<br>식품정보가 <br>바로바로!</h2>
+            <a href="teachable.html">영양 정보 알아보러 가기</a>
+        </div>
+        <img id="teachable_image"src="https://lh3.googleusercontent.com/fKno-5FlaTIzn2QXmSROzoOjHB78s0iDgHa0iMLHbbzyAN34x0LJ2ai5JYqb4eOJW9w9y-0hamJtXMTOVguR8_8YcDRu3g" alt="">
+    </div>
+    <!-- section3 -->
+    <div class="mainfullbox" id="mainfulldiv2" style="background-color:#6B76FF;">
+        history
+    </div>
+    <!-- section4 -->
+    <div class="mainfullbox" id="mainfulldiv3" style="background-color:#64A36F;">
+        편의점 꿀조합 추천
+    </div>
+
+    <!-- footer -->
+    <div class="mainfullbox" id="mainfulldiv4" style="background-color:#24262b;">
+        <!-- <h1>X</h1> -->
+        <!-- <img id="mutgik2"src="https://classlion.net/images/logo.png" alt=""> -->
+        
+        <div class="container2">
+            <p>멋쟁이 사자처럼 직장인 4기</p>
+            <p>LIKESIMBA <span>&#x1F981;</span></p>    
+            <p>팀장 : 황재환 &nbsp;&nbsp;&nbsp; 개발자 : 이재원, 양강준, 강창식</p>
+            <ul class="contact">
+                <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href=""><i class="fab fa-instagram-square"></i></a></li>
+                <li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+            </ul>    
+        </div>
+        <img id="mutgik"src="https://classlion.net/images/logo.png" alt="">
+
+    </div>
+    
+    <!-- nav_bar -->
+    <div id="mainfull_navi">
+    <ul>
+    	<li><a href="javascript:fnMove('#mainfulldiv0', 0)"><p id="mainfull_navi0" class="on"></p></a></li>
+    	<li><a href="javascript:fnMove('#mainfulldiv1', 1);"><p id="mainfull_navi1"></p></a></li>
+    	<li><a href="javascript:fnMove('#mainfulldiv2', 2)"><p id="mainfull_navi2"></p></a></li>
+    	<li><a href="javascript:fnMove('#mainfulldiv3', 3)"><p id="mainfull_navi3"></p></a></li>
+    	<li><a href="javascript:fnMove('#mainfulldiv4', 4)"><p id="mainfull_navi4"></p></a></li>
+    </ul>
+</div>
+
+</body>
+</html>

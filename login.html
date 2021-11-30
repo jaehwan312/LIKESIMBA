@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0216d67b62.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://emojigraph.org/media/emojidex/bento-box_1f371.png">
+    <title>오늘의 편식</title>
+</head>
+<body>
+ 
+    <!-- login -->
+    
+    <section class="login_form">
+        <a href="index.html"><img src="logo3.png" alt=""></a>        
+        <form action="">
+            <div class="int_area">
+                <input type="text" name="id" id="id" autocomplete="off" required>
+                <label for="id">USER NAME</label>
+            </div>
+            <div class="int_area">
+                <input type="password" name="pw" id="pw" autocomplete="off" required>
+                <label for="pw">PASSWORD</label>
+            </div>
+            <div class="btn_area">
+                <button id="btn" type="submit">LOGIN</button>
+            </div>
+        </form>
+        <div class="caption">
+            <a href="create.html">회원가입</a>
+        </div>    
+    </section>
+
+    <!-- script -->
+    <script>
+        let id = $("#id");
+        let pw = $("#pw");
+        let btn = $("#btn");
+
+        $(btn).on('click', function(){
+            if($(id).val() == "") {
+                $(id).next('label').addClass('warning');
+                setTimeout(function(){
+                    $('label').removeClass('warning');
+                },1500)
+            }
+            else if($(pw).val() == "") {
+                $(pw).next('label').addClass('warning');
+                setTimeout(function(){
+                    $('label').removeClass('warning');
+                },1500)
+
+            }
+        });
+    </script>
+
+</body>
+</html>    
