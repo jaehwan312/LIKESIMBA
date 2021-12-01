@@ -80,7 +80,7 @@ header img{
 
 
 /* scroll animation */
-.mouse { 
+/* .mouse { 
     position: fixed; bottom: 2rem; left: 50%; 
     transform: translateX(-50%); 
     max-width: 2rem; width: 100%; height: auto;
@@ -106,6 +106,173 @@ header img{
     animation-timing-function: cubic-bezier(0.650, -0.550, 0.250, 1.500); 
     animation-iteration-count: infinite; 
     transform-origin: 50% 20.5px; 
+} */
+
+
+.mouse_scroll {
+	display: block;
+	margin: 0 auto;
+	width: 24px;
+	height: 100px;
+	margin-top: 125px;
+    position: fixed;
+    z-index: 1;
+    bottom: -1rem;
+}
+
+
+.m_scroll_arrows {
+  display: block;
+  width: 5px;
+  height: 5px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+   
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  margin: 0 0 3px 4px;
+  
+  width: 16px;
+  height: 16px;
+}
+
+
+.unu {
+  margin-top: 1px;
+}
+
+.unu, .doi, .trei {
+    -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite;
+    animation: mouse-scroll 1s infinite;
+  
+}
+
+.unu {
+  -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s;
+  -webkit-animation-direction: alternate;
+  
+  animation-direction: alternate;
+  animation-delay: alternate;
+}
+
+.doi {
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -webkit-animation-direction: alternate;
+  
+  animation-delay: .2s;
+  animation-direction: alternate;
+  
+  margin-top: -6px;
+}
+
+.trei {
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  -webkit-animation-direction: alternate;
+  
+  animation-delay: .3s;
+  animation-direction: alternate;
+  
+  
+  margin-top: -6px;
+}
+/* 
+.mouse {
+  height: 42px;
+  width: 24px;
+  border-radius: 14px;
+  transform: none;
+  border: 2px solid white;
+  top: 170px;
+}
+
+.wheel {
+  height: 5px;
+  width: 2px;
+  display: block;
+  margin: 5px auto;
+  background: white;
+  position: relative;
+  
+  height: 4px;
+  width: 4px;
+  border: 2px solid #fff;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+}
+
+.wheel {
+  -webkit-animation: mouse-wheel 0.6s linear infinite;
+  -moz-animation: mouse-wheel 0.6s linear infinite;
+  animation: mouse-wheel 0.6s linear infinite;
+} */
+/* 
+@-webkit-keyframes mouse-wheel{
+   0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+@-moz-keyframes mouse-wheel {
+  0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+@-o-keyframes mouse-wheel {
+
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+}
+@keyframes mouse-wheel {
+
+   0% { top: 1px; }
+  25% { top: 2px; }
+  50% { top: 3px;}
+  75% { top: 2px;}
+  100% { top: 1px;}
+} */
+
+@-webkit-keyframes mouse-scroll {
+
+  0%   { opacity: 0;}
+  50%  { opacity: .5;}
+  100% { opacity: 1;}
+}
+@-moz-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@-o-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
 }
 
 
@@ -115,7 +282,7 @@ header img{
 /* section2 */
 
 .teachable_phrase{
-    margin-right: 100px;
+    margin-right: 150px;
 }
 
 .teachable_phrase a{
@@ -132,6 +299,11 @@ header img{
 
 .teachable_phrase a:hover{
     background-color: #1957c2;
+}
+
+#example{
+    width: 300px;
+    border-radius: 10px;
 }
 
 /* section3 */
@@ -186,6 +358,7 @@ header img{
     left: 12%;
 } */
 
+
 #mainfulldiv4 h1{
     position: relative;
     font-size: 80px;
@@ -203,8 +376,11 @@ header img{
     align-items:center;
 }
 
+
+/* navigation bar */
+
 #mainfull_navi { 
-    position:fixed; top:40%; right:180px; z-index:8992; 
+    position:fixed; top:40%; right:180px; z-index:1; 
 }
 
 #mainfull_navi ul {
@@ -235,5 +411,5 @@ header img{
 }
 
 @media screen and (max-width:1025px){
-#mainfull_navi { right:5%; }
+#mainfull_navi { right:10%; }
 }
