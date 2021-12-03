@@ -68,3 +68,5 @@ document.querySelector('.next').addEventListener('click',() => {
 })
 
 renderCalendar()
+
+//미완성. 월마다 30,31일 일수가 다름..
