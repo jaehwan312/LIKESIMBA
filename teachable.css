@@ -1,72 +1,92 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'BoingSemiBold', Helvetica, Arial, sans-serif;
-    box-sizing: border-box;
-
+html,body{ 
+    margin:0; padding:0; width:100%; height:100%;
 }
 
+
+.mainfullbox{ 
+    width:100%; height:100%; 
+    position:relative; color:#ffffff; 
+    font-size:24pt;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
 
 /* header */
 
-.header{
-    height: 50px;
-    width: 90%;
-    margin: 10px auto;
+header{
+    width: 80%; height: 200px;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
+    background-color: transparent;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.header_logo{
-    text-decoration: none;
-    margin: 20px;
+header img{
+    width: 200px;
 }
 
-.header_logo a{
-    color: #2272eb;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.header_menu{
-    margin-left: 100px;
-    list-style: none;
+.account{
+    list-style-type: none;
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
 }
 
-
-.header_menu a:hover, .header_account a:hover{
-    background-color: rgba(0,27,55,0.1);
-    border-radius: 4px;
-}
-
-.header_menu a, .header_account a{
-    font-size: 15px;
-    padding: 12px 10px;
-    margin:0 13px;
+.account a{
     text-decoration: none;
-    color: black;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    margin: 10px;
 }
 
-.header_account{
-    list-style: none;
-    display: flex;
-    padding: 20px;
+
+.account span{
+    color: white;
+    font-size: 18px;
+}
+
+.account a:hover{
+    background-color: hsl(27, 100%, 68%);
+    border-radius: 5px;
 }
 
 /* teachable */
 
+
 #webcam-container{
     margin: 50px;
-    width: 300px;
+    width: 500px;
     height: 500px;
     background-color: #dbdbdb;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+#btn {
+    width: 500px;
+    height: 500px;
+    padding: 12px 40px ;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #2272eb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background-color: #1957c2;
 }
