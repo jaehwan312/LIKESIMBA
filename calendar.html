@@ -8,20 +8,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500&family=Oswald:wght@200;300;400&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0216d67b62.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="https://emojigraph.org/media/emojidex/bento-box_1f371.png">
     <title>Calendar</title>
 </head>
 <body>
-
-
+    
     <div class="container">
+
+        <!-- header -->
+        <header>
+            <a href="index.html"><img src="logo3.png" alt=""></a>        
+            <ul class="account">
+                <li><a href="login.html">로그인</a></li>
+                <span>|</span>
+                <li><a href="create.html">회원가입</a></li>
+            </ul>
+        </header>
+
         <div class="calendar">
             <div class="month">
-                <i class="fas fa-angle-left prev">&lt;</i>
+                <i class="fas fa-angle-left prev"></i>
                 <div class="date">
                     <h1></h1>
                     <p></p>
                 </div>
-                <i class="fas fa-angle-right next">&gt;</i>
+                <i class="fas fa-angle-right next"></i>
             </div>
             <div class="weekdays">
                 <div>Sun</div>
@@ -36,7 +48,28 @@
                 
             </div>
         </div>
+        <div class="calory">
+
+            <div class="box">
+                <div class="img_box">
+                    <i class="fas fa-angle-left prev"></i>
+                    <i class="fas fa-angle-right next"></i>
+                </div>
+                <p></p>
+            </div>
+
+            <div class="infomation">
+                <p>칼로리 : 100kcal</p>
+                <p>탄수화물 : 100g</p>
+                <p>단백질 : 100g</p>
+                <p>지방 : 100g</p>
+            </div>
+        </div>
+
     </div>
+
+
+
 
 
     <script src="calendar.js"></script>    
