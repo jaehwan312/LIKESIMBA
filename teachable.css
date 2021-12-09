@@ -8,8 +8,8 @@ html,body{
     position:relative; color:#ffffff; 
     font-size:24pt;
     display: flex;
-    justify-content: center;
-    align-items:center;
+    justify-content: space-around;
+    align-items: flex-end;
 }
 
 /* header */
@@ -60,23 +60,27 @@ header img{
 
 /* teachable */
 
+canvas {
+    margin: auto;
+}
 
 #webcam-container{
-    margin: 50px;
+    margin-bottom: 50px; margin-left: 200px;
     width: 500px;
     height: 500px;
     background-color: #dbdbdb;
     border-radius: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column-reverse;
     align-items: center;
 }
 
 
 #btn {
-    width: 500px;
-    height: 500px;
-    padding: 12px 40px ;
+    width: 350px;
+    height: 50px;
+    padding: 12px 40px;
+    margin-bottom: 20px;
     font-size: 18px;
     font-weight: bold;
     background-color: #2272eb;
@@ -89,4 +93,12 @@ header img{
 
 #btn:hover {
     background-color: #1957c2;
+}
+
+
+#label-container{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    background-color: blueviolet;
 }
