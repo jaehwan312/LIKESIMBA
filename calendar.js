@@ -35,11 +35,12 @@ const months = [
 document.querySelector('.date h1').innerHTML = months[date.getMonth()];
 
 document.querySelector('.date p').innerHTML = date.toDateString();
+document.querySelector('.calory p').innerHTML = date.toDateString();
 
 let days = "";
 
 for (let x = firstDayIndex; x > 0; x--) {
-    days += `<div class="prev-date">${prevLastday - x}</div>`;
+    days += `<div class="prev-date">${prevLastday - x + 1}</div>`;
 }
 
 for (let i=1; i<=lastDay; i++) {
@@ -68,5 +69,3 @@ document.querySelector('.next').addEventListener('click',() => {
 })
 
 renderCalendar()
-
-//미완성. 월마다 30,31일 일수가 다름..
