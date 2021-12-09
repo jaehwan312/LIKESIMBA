@@ -224,32 +224,39 @@ header img{
 /* footer */
 
 .container2{
+    width: 600px;
+    height: 400px;
     margin: 50px;
     font-size: 20px;
     position: relative;
     left: -10%;
     top: 10%;
-    line-height: 40px;
 }
 
-.contact{
-    list-style-type: none;
-    text-decoration: none;
+.container2 p:not(.face_img p) {
+    margin-left: 50px;
+}
+
+.img_box {
     display: flex;
-    padding-left: 0;
+    justify-content: space-around;
+    margin: 50px 0;    
 }
 
-.contact li{
-    margin: 100px 50px;
+.face_img {
+    text-align: center;
 }
 
-.contact i{
-    color: white;
-    font-size: 50px;
+.face_img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
 }
 
-.contact i:hover{
-    color: #bf68cc;
+.team {
+    display: flex;
+    justify-content: space-between;
 }
 
 #mutgik{
